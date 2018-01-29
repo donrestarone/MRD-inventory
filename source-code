@@ -1,0 +1,259 @@
+puts Time.now.strftime("%I:%M %p")
+
+
+
+puts "enter time differential from current time, in minutes."
+ctimed = (gets.to_f) * 60  
+#ctime = Time.now.strftime("%I:%M %p") - ctimed 
+ctime = (Time.now) - ctimed  
+puts "enter day adjustment factor 1. typical/ 420"
+d_adjustmentf1 = 420
+puts "enter day adjustment factor 2. typical/ 580"
+d_adjustmentf2 = 580 
+puts "enter day adjustment factor 1. typical/ 240"
+d_adjustmentf3 = 240
+
+
+		class Adjustment_factor
+			attr_reader :d_adjustmentf1, :d_adjustmentf2, :d_adjustmentf3
+				def initialize (d_adjustmentf1, d_adjustmentf2, d_adjustmentf3)
+				@d_adjustmentf1 = d_adjustmentf1
+				@d_adjustmentf2 = d_adjustmentf2
+				@d_adjustmentf3 = d_adjustmentf3
+			end
+		end 
+
+		maska1 = rand(229...420) * 2.7182 / Math::PI
+		maska2 = rand(229...580) * 2.7182 / Math::PI
+		maska3 = rand(229...580) * 2.7182 / Math::PI
+			#maska1 = 420
+			#maska2 = 580
+			#maska3 = 240
+
+		class D_adjustmentfactor
+			attr_reader :maska1, :maska2, :maska3 
+			def initialize (maska1, maska2, maska3)
+				@maska1 = maska1 
+				@maska2 = maska2 
+				@maska3 = maska3 
+			end 
+		end 
+
+		class Present_time 
+			attr_reader :ctime, :ctimed 
+				def initialize(ctime, ctimed)
+					@ctime = ctime
+					@ctimed = ctimed 
+				end 
+		end 
+
+
+print "THE TIME NOW IS "
+puts ctime 
+
+puts "-----------------"
+puts "SAMPLE1 -Schedule EXPIRES IN 1HR 30MIN"
+puts ""
+print "Cook Time: "
+puts ctime  
+print "Expiry Time: "
+puts ctime + 5400 
+puts ""
+print "Cook Time: "
+puts (ctime + 5400) - maska1  
+print "Expiry Time: "
+puts (ctime + 5400) - maska1 + 5400 
+puts ""
+print "Cook Time: "
+puts (ctime + 5400) - maska1 + 5400 - d_adjustmentf1 
+print "Expiry Time: "
+puts (ctime + 5400) + (5400 + 5400) - d_adjustmentf1 - maska1
+puts ""
+print "Cook Time: "
+puts (ctime + 5400) + (5400 + 5400) - maska2 - d_adjustmentf1
+print "Expiry Time: "
+puts (ctime + 5400) + (5400 + 5400) - maska2 + 5400  - d_adjustmentf1
+puts ""
+print "Cook Time: "
+puts (ctime + 5400) + (5400 + 5400) + 5400 - maska2 - d_adjustmentf1 - d_adjustmentf1
+print "Expiry Time: "
+puts (ctime + 5400) + (5400 + 5400) + (5400 + 5400)  - maska2 - d_adjustmentf1 - d_adjustmentf1
+
+ 
+ spi1 = Math::PI * 420
+
+	class Pifactor
+		attr_accessor :spi1, :spi2, :spi3 
+			def initialize (spi1, spi2, spi3)
+			@spi1 = spi1 
+			@spi2 = spi2 
+			@spi3 = spi3
+		end
+	end 
+
+puts "-----------------"
+puts "SAMPLE2-Schedule EXPIRES IN 2HR"
+puts ""
+print "Cook Time: "
+puts ctime  
+print "Expiry Time: "
+puts ctime + 7200 
+puts ""
+print "Cook Time: "
+puts (ctime + 7200) - spi1   
+print "Expiry Time: "
+puts (ctime + 7200) - spi1 + 7200 
+puts ""
+print "Cook Time: "
+puts (ctime + 7200) - spi1 + 7200 - d_adjustmentf1 
+print "Expiry Time: "
+puts (ctime + 7200) + (7200 + 7200) - d_adjustmentf1 - spi1 
+puts ""
+print "Cook Time: "
+puts (ctime + 7200) + (7200 + 7200) - maska2 - d_adjustmentf1 - spi1 
+print "Expiry Time: "
+puts (ctime + 7200) + (7200 + 7200) - maska2 + 7200  - d_adjustmentf1 - spi1 
+puts ""
+print "Cook Time: "
+puts (ctime + 7200) + (7200 + 7200) + 7200 - maska2 - d_adjustmentf1 - d_adjustmentf1 - spi1
+print "Expiry Time: "
+puts (ctime + 7200) + (7200 + 7200) + (7200 + 7200)  - maska2 - d_adjustmentf1 - d_adjustmentf1 - spi1 
+
+
+puts "--------------------"
+puts "SAMPLE3-Schedule EXPIRES IN 45MIN "
+puts ""
+print "Cook Time: "
+puts ctime  
+print "Expiry Time: "
+puts ctime + 2700 
+puts ""
+print "Cook Time: "
+puts (ctime + 2700) - maska1 
+print "Expiry Time: "
+puts (ctime + 2700) + 2700 - maska1 
+puts ""
+print "Cook Time: "
+puts (ctime + 2700) + 2700 
+print "Expiry Time: "
+puts (ctime + 2700) + (2700 + 2700) 
+puts ""
+print "Cook Time: "
+puts (ctime + 2700) + (2700 + 2700) - maska2 
+print "Expiry Time: "
+puts (ctime + 2700) + (2700 + 2700) - maska2 + 2700  
+puts ""
+print "Cook Time: "
+puts (ctime + 2700) + (2700 + 2700) + 2700  
+print "Expiry Time: "
+puts (ctime + 2700) + (2700 + 2700) + (2700 + 2700) 
+
+
+
+puts "--------------------"
+puts "SAMPLE4-schedule EXPIRES IN 45MIN "
+puts ""
+print "Cook Time: "
+puts ctime - maska3
+print "Expiry Time: "
+puts ctime + 2700 - maska3 
+puts ""
+print "Cook Time: "
+puts (ctime + 2700) - maska1 - maska3
+print "Expiry Time: "
+puts (ctime + 2700) - maska1 + 2700 - maska3 
+puts ""
+print "Cook Time: "
+puts (ctime + 2700) + 2700 - maska2 
+print "Expiry Time: "
+puts (ctime + 2700) + (2700 + 2700) - maska2 
+puts ""
+print "Cook Time: "
+puts (ctime + 2700) + (2700 + 2700) - maska2 - maska3
+print "Expiry Time: "
+puts (ctime + 2700) + (2700 + 2700) - maska2 + 2700 - maska3  
+puts ""
+print "Cook Time: "
+puts (ctime + 2700) + (2700 + 2700) + 2700 - maska2 - maska3 - maska3
+print "Expiry Time: "
+puts (ctime + 2700) + (2700 + 2700) + (2700 + 2700) - maska2 - maska3 - maska3 
+
+
+puts "--------------------"
+puts "SAMPLE5-Schedule expires in 30min"
+puts ""
+print "Cook Time: "
+puts ctime  
+print "Expiry Time: "
+puts ctime + 1800 
+puts ""
+print "Cook Time: "
+puts (ctime + 1800) - spi1   
+print "Expiry Time: "
+puts (ctime + 1800) - spi1 + 1800 
+puts ""
+print "Cook Time: "
+puts (ctime + 1800) - spi1 + 1800 - d_adjustmentf1 
+print "Expiry Time: "
+puts (ctime + 1800) + (1800 + 1800) - d_adjustmentf1 - spi1 
+puts ""
+print "Cook Time: "
+puts (ctime + 1800) + (1800 + 1800) - maska2 - d_adjustmentf1 - spi1 
+print "Expiry Time: "
+puts (ctime + 1800) + (1800 + 1800) - maska2 + 1800  - d_adjustmentf1 - spi1 
+puts ""
+print "Cook Time: "
+puts (ctime + 1800) + (1800 + 1800) + 1800 - maska2 - d_adjustmentf1 - d_adjustmentf1 - spi1
+print "Expiry Time: "
+puts (ctime + 1800) + (1800 + 1800) + (1800 + 1800)  - maska2 - d_adjustmentf1 - d_adjustmentf1 - spi1 
+puts ""
+print "Cook Time: "
+puts (ctime + 1800) + (1800 + 1800) + (1800 + 1800) - maska2 - d_adjustmentf1 - d_adjustmentf1 - spi1 - spi1 
+print "Expiry Time: "
+puts (ctime + 1800) + (1800 + 1800) + (1800 + 1800) + (1800)  - maska2 - d_adjustmentf1 - d_adjustmentf1 - spi1 - spi1  
+puts ""
+print "Cook Time: "
+puts (ctime + 1800) + (1800 + 1800) + (1800 + 1800) + 1800 - maska2 - d_adjustmentf1 - d_adjustmentf1 - spi1 - spi1 - spi1
+print "Expiry Time: "
+puts (ctime + 1800) + (1800 + 1800) + (1800 + 1800) + (1800 + 1800)  - maska2 - d_adjustmentf1 - d_adjustmentf1 - spi1 - spi1 - spi1
+puts ""
+
+
+puts "--------------------"
+puts "SAMPLE6-Schedule EXPIRES IN 90 MIN"
+puts ""
+print "Cook Time: "
+puts ctime  
+print "Expiry Time: "
+puts ctime + 5400 
+puts ""
+print "Cook Time: "
+puts (ctime + 5400) - maska1  
+print "Expiry Time: "
+puts (ctime + 5400) - maska1 + 5400 
+puts ""
+print "Cook Time: "
+puts (ctime + 5400) - maska1 + 5400 - d_adjustmentf2 
+print "Expiry Time: "
+puts (ctime + 5400) + (5400 + 5400) - d_adjustmentf2 - maska1 
+puts ""
+print "Cook Time: "
+puts (ctime + 5400) + (5400 + 5400) - maska2 - d_adjustmentf2 - d_adjustmentf2
+print "Expiry Time: "
+puts (ctime + 5400) + (5400 + 5400) - maska2 + 5400  - d_adjustmentf2 - d_adjustmentf2
+puts ""
+print "Cook Time: "
+puts (ctime + 5400) + (5400 + 5400) + 5400 - maska2 - d_adjustmentf2 - d_adjustmentf2 - d_adjustmentf2
+print "Expiry Time: "
+puts (ctime + 5400) + (5400 + 5400) + (5400 + 5400)  - maska2 - d_adjustmentf2 - d_adjustmentf2 - d_adjustmentf2
+
+
+
+
+
+
+puts "..."
+puts "algorithem values"
+puts maska1 
+puts maska2 
+puts maska3 
