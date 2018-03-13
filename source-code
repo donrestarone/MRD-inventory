@@ -253,7 +253,7 @@ puts (ctime + 5400) + (5400 + 5400) + (5400 + 5400)  - maska2 - d_adjustmentf2 -
 
 
 puts "..."
-puts "algorithem values"
+puts "values"
 puts maska1 
 puts maska2 
 puts maska3 
